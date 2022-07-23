@@ -1,0 +1,69 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004-005 strtok.save
+006-015 MAIN.datos
+016.0   MAIN.stringComplete
+017     @PSTRINGR_9600_31766_31767.@SCRATCH1
+018     @PSTRINGR_9600_31766_31767.@SCRATCH2
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+002C  MAIN
+0004  @PSTRINGR_9600_31766_31767
+002C  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\Ing. Leonardo\Documents\PIC C\
+
+Project Files:
+    reconocimiento.c
+    ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+    ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+    ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+
+Units:
+    C:\Users\Ing. Leonardo\Documents\PIC C\reconocimiento (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      reconocimiento.err
+    Ext Symbols: reconocimiento.esym
+    INHX32:      reconocimiento.hex
+    Symbols:     reconocimiento.sym
+    List:        reconocimiento.lst
+    Debug/COFF:  reconocimiento.cof
+    Project:     reconocimiento.PJT
+    Call Tree:   reconocimiento.tre
+    Statistics:  reconocimiento.sta
