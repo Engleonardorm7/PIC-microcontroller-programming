@@ -33,21 +33,43 @@
 //#use delay(clock=20M, xtal)
 #use delay(clock=4M, xtal)
 #use rs232(UART, baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8)
+char data;
 
-void main(void) {
-char a;
- if (kbhit()){  
- //wait until a character has been received
- a=getch();
- output_lowpin_b3);
- delay_ms(500);
- 
- }
- else{
- 
-  output_high(pin_b3);
-   delay_ms(500);
- 
- }
+void rd_isr(void) {
 
+data= getc();
+
+void main() { 
+   kbd_init();                       //Funcion para inicializar el uso del teclado
+   port_b_pullups(TRUE); 
+    data=getchar(); 
+   
+char C;
+char a;                                      //Declaracion de la Variable “C” de tipo char
+
+while(TRUE) {
+   
+      C = kbd_getc(); //devuelve el código ASCII de la tecla pulsada, si no se pulsa ninguna devuelve 0.
+              
+    if ( !input (pin_b0)){
+   printf("1");
+output_high(pin_d7);
+   }
+ if ( !input (pin_b1)){
+   printf("2");
+output_high(pin_d7);
+   }
+ if (data=="2"){
+   
+output_high(pin_a4);
+delay_ms(500);
+   }
+  
+
+  
 }
+
+ 
+         
+   }
+
