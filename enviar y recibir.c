@@ -45,11 +45,11 @@ void main() {
     data=getchar(); 
    
 char C;
-char a;                                      //Declaracion de la Variable “C” de tipo char
+char a;                                      //Declaration of the Variable "C" of type char
 
 while(TRUE) {
    
-      C = kbd_getc(); //devuelve el código ASCII de la tecla pulsada, si no se pulsa ninguna devuelve 0.
+      C = kbd_getc(); //returns the ASCII code of the key pressed, if none is pressed it returns 0.
               
     if ( !input (pin_b0)){
    printf("1");
