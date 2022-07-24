@@ -1,49 +1,32 @@
-#include <18F4550.h>
-#device adc=8
+#include <servo.h>
 
 
-//#use delay(clock=20M, xtal)
-#use delay(clock=4M, xtal)
-#use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8,UART)
+void main()
+{
+   setup_adc_ports(AN0_TO_AN3|VREF_VREF);
+   setup_timer_3(T3_DISABLED | T3_DIV_BY_1);
+setup_adc(ADC_CLOCK_DIV_2);
+  
 
 
-void main(void){
-   while(true){
+   while(TRUE)
+   {
+   float sen0=0;
    
-   if((input(PIN_E0))){
+    set_adc_channel(0); 
+   sen0=read_adc();    
 
-        
-        output_high(PIN_B0);
+   if(sen0>0){
+         output_high(PIN_B0);      //desactivación del servo
          delay_ms(0.3);
          output_low(PIN_B0);
-         delay_ms(8.9);
-         output_high(PIN_B0);
-         delay_ms(0.3);
+delay_ms(8.9);
+   }
+   else{
+ output_high(PIN_B0);      //desactivación del servo
+         delay_ms(0.5);
          output_low(PIN_B0);
-         delay_ms(8.9);
-
-   }else{
-   
-         
-         
-         
-          output_high(PIN_B0);
-         delay_us(2000);
-         output_low(PIN_B0);
-         delay_us(18000);
+         delay_ms(10);
    }
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
